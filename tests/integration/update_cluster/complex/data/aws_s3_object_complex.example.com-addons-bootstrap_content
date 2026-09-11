@@ -5,14 +5,14 @@ spec:
   addons:
   - id: k8s-1.16
     manifest: kops-controller.addons.k8s.io/k8s-1.16.yaml
-    manifestHash: aaeab8038dc73abc02cb0da1abf9f575e9ab86790b6d3da12b114243976cbeee
+    manifestHash: dade103d1b92f45bdfcd5e8683bc193f4bc79dbec3af23554ae47f80e2d5766d
     name: kops-controller.addons.k8s.io
     needsRollingUpdate: control-plane
     selector:
       k8s-addon: kops-controller.addons.k8s.io
   - id: k8s-1.12
     manifest: coredns.addons.k8s.io/k8s-1.12.yaml
-    manifestHash: 0b180b32473059784ae4bc805d19bc5596a25a86a84041755b792a4766501627
+    manifestHash: 05a3f0ee0b1b2b98145feb19232a5b0567eb0fd0419f0f401accca648a20d0a1
     name: coredns.addons.k8s.io
     selector:
       k8s-addon: coredns.addons.k8s.io
@@ -91,19 +91,19 @@ spec:
       k8s-addon: storage-aws.addons.k8s.io
   - id: k8s-1.12
     manifest: authentication.aws/k8s-1.12.yaml
-    manifestHash: 22e33f833fccae05f3e7060ea11f4eca26c2a480d8beff874ffda473b6dd0140
+    manifestHash: 1ddc3410db78e729aff21cbeddd84fe2a8526c968cd2d1f9b654c711143c0212
     name: authentication.aws
     selector:
       role.kubernetes.io/authentication: "1"
   - id: k8s-1.18
     manifest: aws-cloud-controller.addons.k8s.io/k8s-1.18.yaml
-    manifestHash: 095af875ca0994ca5e3b7711a86c5d2707762e16a8b32e61a4059a4a8f48d687
+    manifestHash: b19dba853c99bc11d5f91518826a27b0fec9d36b6fe95a6f3b29951f54b61efb
     name: aws-cloud-controller.addons.k8s.io
     selector:
       k8s-addon: aws-cloud-controller.addons.k8s.io
   - id: k8s-1.17
     manifest: aws-ebs-csi-driver.addons.k8s.io/k8s-1.17.yaml
-    manifestHash: 5ec195fdf7bf08b42bee6e25a21fbecf305143c739627721c6255ebf0e239182
+    manifestHash: 3c5873ef67d9ffec0584219cbfc6ba510e72d0cdd75d96a5320f88a42a39b84f
     name: aws-ebs-csi-driver.addons.k8s.io
     selector:
       k8s-addon: aws-ebs-csi-driver.addons.k8s.io

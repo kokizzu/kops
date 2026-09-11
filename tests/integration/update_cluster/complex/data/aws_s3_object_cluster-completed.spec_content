@@ -58,6 +58,7 @@ spec:
     runc:
       version: 1.4.3
     sandboxImage: registry.k8s.io/pause:3.10.1
+    selinuxEnabled: true
     version: 2.3.4
   dnsZone: Z1AFAKE1ZON3YO
   etcdClusters:

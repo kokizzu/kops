@@ -189,6 +189,10 @@ spec:
       nodeSelector:
         node-role.kubernetes.io/control-plane: ""
       priorityClassName: system-node-critical
+      securityContext:
+        seLinuxOptions:
+          level: s0
+          type: spc_t
       serviceAccountName: aws-iam-authenticator
       tolerations:
       - effect: NoSchedule

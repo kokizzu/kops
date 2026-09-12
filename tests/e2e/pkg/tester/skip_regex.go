@@ -160,7 +160,12 @@ func (t *Tester) setSkipRegexFlag() error {
 
 	for _, subnet := range cluster.Spec.Subnets {
 		if subnet.Type == v1alpha2.SubnetTypePrivate || subnet.Type == v1alpha2.SubnetTypeDualStack {
-			skipRegex += "|SSH.should.SSH.to.all.nodes.and.run.commands"
+			// The test SSHes from the pod running the test binary to every node address reported
+			// by the API. Nodes in private subnets are only reachable through the bastion, and
+			// nodes in dual-stack/IPv6 clusters only report IPv6 addresses, which the IPv4-only
+			// Prow pod cannot reach at all. The framework then finds zero SSH-able hosts and the
+			// test fails with `dial tcp: missing address`.
+			skipRegex += "|should.SSH.to.all.nodes.and.run.commands"
 			break
 		}
 	}
